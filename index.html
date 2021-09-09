@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/coffin.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<table class="grid">
+    <thead>
+    <tr class="information">
+        <th width="25%" colspan="2">Сыпачева Анастасия Андреевна</th>
+        <th width="25%" colspan="2">Номер ИСУ: 311724</th>
+        <th width="25%" colspan="2">Номер варианта: 13211</th>
+        <th width="25%" colspan="2"><a href="https://github.com/Anastasias35" target="new"><img src="image/GitHub-Mark-32px.png" alt=""></a>
+            <a href="https://vk.com/anastasiykasss" target="new"><img src="image/1486147202-social-media-circled-network10_79475.png" alt=""></a>
+            <a href="https://t.me/anastasiykasss" target="new"><img src="image/telegram_icon-icons.com_72055.png" alt=""></a>
+        </th>
+    </tr>
+    </thead>
+
+    <tr>
+        <td colspan="4" width="40%"><img src="image/areas.png" alt="" class="image"></td>
+        <td colspan="4" width="60%">
+            <form action="#" method="GET" class="form" name="form">
+                Координата X: <br>
+                <div>
+                    <input type="text" name="Coordinates_X" class="coordinates_x" autocomplete="off" placeholder="введите число от -3 до 3"> <br>
+                </div>
+                Координата Y: <br>
+                <div>
+                    <input type="button" name="Coordinates_Y"  value="-3" class="coordinates_y" id="y1" onclick="clickY()">
+                    <input type="button" name="Coordinates_Y"  value="-2" class="coordinates_y" id="y2" onclick="clickY()">
+                    <input type="button" name="Coordinates_Y"  value="-1" class="coordinates_y" id="y3" onclick="clickY()">
+                    <input type="button" name="Coordinates_Y"  value="0" class="coordinates_y" id="y4" onclick="clickY()">
+                    <input type="button" name="Coordinates_Y"  value="1" class="coordinates_y" id="y5" onclick="clickY()">
+                    <input type="button" name="Coordinates_Y"  value="2" class="coordinates_y" id="y6" onclick="clickY()">
+                    <input type="button" name="Coordinates_Y"  value="3" class="coordinates_y" id="y7" onclick="clickY()">
+                    <input type="button" name="Coordinates_Y"  value="4" class="coordinates_y" id="y8" onclick="clickY()">
+                    <input type="button" name="Coordinates_Y"  value="5" class="coordinates_y" id="y9" onclick="clickY()">
+                </div>
+                Радиус R:
+                <div >
+                    <select name="Radius"class="radius">
+                        <option value="1" checked>1</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div >
+                    <button type="submit" class="submit_button">Отправить</button>
+                    <button type="reset" class="reset-button">Очистить</button>
+                </div>
+            </form>
+        </td>
+    </tr>
+    <tr class="table_result">
+        <td>Coordinate X</td>
+        <td>Coordinate Y</td>
+        <td>Radius R</td>
+        <td>Result</td>
+        <td colspan="2">Current time</td>
+        <td colspan="2">Spening time</td>
+    </tr>
+</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="validate.js"></script>
+</body>
+</html>
