@@ -31,20 +31,20 @@
                     <input type="text" name="Coordinates_X" class="coordinates_x" autocomplete="off" placeholder="введите число от -3 до 3"> <br>
                 </div>
                 Координата Y: <br>
-                <div>
-                    <input type="button" name="Coordinates_Y"  value="-3" class="coordinates_y" id="y1" onclick="clickY()">
-                    <input type="button" name="Coordinates_Y"  value="-2" class="coordinates_y" id="y2" onclick="clickY()">
-                    <input type="button" name="Coordinates_Y"  value="-1" class="coordinates_y" id="y3" onclick="clickY()">
-                    <input type="button" name="Coordinates_Y"  value="0" class="coordinates_y" id="y4" onclick="clickY()">
-                    <input type="button" name="Coordinates_Y"  value="1" class="coordinates_y" id="y5" onclick="clickY()">
-                    <input type="button" name="Coordinates_Y"  value="2" class="coordinates_y" id="y6" onclick="clickY()">
-                    <input type="button" name="Coordinates_Y"  value="3" class="coordinates_y" id="y7" onclick="clickY()">
-                    <input type="button" name="Coordinates_Y"  value="4" class="coordinates_y" id="y8" onclick="clickY()">
-                    <input type="button" name="Coordinates_Y"  value="5" class="coordinates_y" id="y9" onclick="clickY()">
+                <div id="button-y">
+                    <input type="button" name="Coordinates_Y"  value="-3">
+                    <input type="button" name="Coordinates_Y"  value="-2">
+                    <input type="button" name="Coordinates_Y"  value="-1">
+                    <input type="button" name="Coordinates_Y"  value="0">
+                    <input type="button" name="Coordinates_Y"  value="1">
+                    <input type="button" name="Coordinates_Y"  value="2">
+                    <input type="button" name="Coordinates_Y"  value="3">
+                    <input type="button" name="Coordinates_Y"  value="4">
+                    <input type="button" name="Coordinates_Y"  value="5">
                 </div>
                 Радиус R:
                 <div >
-                    <select name="Radius"class="radius">
+                    <select name="Radius" class="radius">
                         <option value="1" checked>1</option>
                         <option value="1.5">1.5</option>
                         <option value="2">2</option>
@@ -53,20 +53,23 @@
                     </select>
                 </div>
                 <div >
-                    <button type="submit" class="submit_button">Отправить</button>
+                    <button type="submit" class="submit-button">Отправить</button>
                     <button type="reset" class="reset-button">Очистить</button>
                 </div>
             </form>
         </td>
     </tr>
-    <tr class="table_result">
-        <td>Coordinate X</td>
-        <td>Coordinate Y</td>
-        <td>Radius R</td>
-        <td>Result</td>
-        <td colspan="2">Current time</td>
-        <td colspan="2">Spening time</td>
-    </tr>
+    <table class="table-result">
+        <tr>
+            <td>Coordinate X</td>
+            <td>Coordinate Y</td>
+            <td>Radius R</td>
+            <td>Result</td>
+            <td colspan="2">Current time</td>
+            <td colspan="2">Spending time</td>
+        </tr>
+    </table>
+
 </table>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="validate.js"></script>

@@ -2,8 +2,9 @@ body{
     font-family: monospace;
     border: 4px solid rgb(173, 236, 255);
     padding:1% 3% 2% 3%;
-    background: url('image/1612254472_194-p-rozovo-golubo-fioletovii-fon-225.png') 0 0 no-repeat fixed;
+    background: url('image/1612254472_194-p-rozovo-golubo-fioletovii-fon-225.png') 0 0 repeat fixed;
     word-wrap: break-word;
+    overflow: scroll;
 }
 
 table{
@@ -46,7 +47,7 @@ td,th{
     line-height: 200%;
 }
 
-.coordinates_x, .coordinates_y, .radius, .reset-button, .submit_button{
+.form input,button,select{
     font-size: 24px;
 }
 
@@ -58,11 +59,8 @@ td,th{
     box-shadow:0 0 5px 2px rgba(108, 204, 248, 0.5);
 }
 
-.coordinates_y:hover{
-    box-shadow:0 0 5px 2px rgba(108, 204, 248, 0.5);
-}
 
-.submit_button:hover, .reset-button:hover{
+.submit-button:hover, .reset-button:hover{
     box-shadow:0 0 5px 2px rgba(108, 204, 248, 0.5);
     transition-duration: 2ms;
 }
@@ -71,7 +69,15 @@ td,th{
     box-shadow:0 0 5px 2px rgba(108, 204, 248, 0.5);
 }
 
-.table_result td{
+.active{
+    background-color: lightpink;
+}
+
+#button-y>input:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 10px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.table-result td{
     border:3px solid rgb(173, 236, 255);
     font-size: 20px;
     color:rgb(91, 41, 172);
@@ -79,10 +85,10 @@ td,th{
     text-shadow: lightslategray 1px 0px;
 }
 
-.table_result{
-    box-shadow:0 0 10px  cornsilk;
+.table-result {
+    box-shadow: 0 0 10px cornsilk;
 }
 
-.coordinates_y{
-    background-color:white;
+.table-result td{
+    font-size: 15px;
 }
