@@ -6,7 +6,7 @@ if(!isset($_SESSION['data'])){
 function validateX($coordx){
     if (!isset($coordx)) return false;
     else if (!is_numeric($coordx)) return false;
-    else if (Math.ceil(substr($coordx,0,5)) <=-3 || Math.floor(substr($coordx,0,5))>=3) return false;
+    else if (Math.ceil($coordx.substr(0,5)) <=-3 || Math.floor($coordx.substr(0,5))>=3) return false;
     return true;
 }
 
@@ -82,7 +82,7 @@ else{
     $radius=$_GET['Radius'];
     $timezone=$_GET['timezone'];
     $curtime=date("H:i:s",time()-$timezone*60);
-    $coordx=$coordx.str_replace(",",".") ;
+    $coordx=str_replace(",",".",$coordx) ;
 
     $time=round(microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'],7);
 
@@ -101,6 +101,9 @@ else{
     array_push($_SESSION['data'],$itog);
     echo $itog;
 }
+
+
+
 
 
 
