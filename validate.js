@@ -18,10 +18,11 @@ function validateX(){
         alert("координата x должна быть числом");
         return false;
     }
-    else if (Math.ceil(x.substr(0,5)) <= -3 || Math.floor(x.substr(0,5))>= 3) {
+    else if (Math.ceil(x.substr(x,0,5)) <= -3 || Math.floor(x.substr(x,0,5))>= 3) {
         alert("координата x должна быть в диапозоне:(-3;3)");
         return false;
     }
+    alert(x);
     return true;
 }
 
@@ -106,7 +107,6 @@ $('.form').on('submit',function (event){
                         $('.table-result').append(row);
                     }
                 }
-
                  */
 
                 if (result.validate) {
