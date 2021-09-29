@@ -18,11 +18,11 @@ function validateX(){
         alert("координата x должна быть числом");
         return false;
     }
-    else if (Math.ceil(x.substr(x,0,5)) <= -3 || Math.floor(x.substr(x,0,5))>= 3) {
+    else if (Math.ceil(x.substr(0,5)) <= -3 || Math.floor(x.substr(0,5))>= 3) {
         alert("координата x должна быть в диапозоне:(-3;3)");
         return false;
     }
-    alert(x);
+    alert("x");
     return true;
 }
 
@@ -55,19 +55,8 @@ function begin(){
             alert(`Ошибка ${request.status}: ${request.statusText}`);
         } else {
             console.log(request.responseText);
-            let result = JSON.parse(request.responseText);
-            for (let i in result.response) {
-                if (result.response[i].validate) {
-                    row = '<tr>';
-                    row += '<td>' + result.response[i].xval + '</td>';
-                    row += '<td>' + result.response[i].yval + '</td>';
-                    row += '<td>' + result.response[i].rval + '</td>';
-                    row += '<td>' + result.response[i].checkarea + '</td>';
-                    row += '<td colspan="2">' + result.response[i].curtime + '</td>';
-                    row += '<td colspan="2">' + result.response[i].exectime + '</td>';
-                    $('.table-result').append(row);
-                }
-            }
+            let result = request.responseText;
+            document.querySelector(".table-result").innerHTML=result;
         }
     };
 }
@@ -84,6 +73,7 @@ $('.form').on('submit',function (event){
     event.preventDefault();
     if(!validate()) return ;
     else{
+        alert(validateX());
         let data = $(this).serialize()+'&Coordinates_Y=' +document.getElementsByClassName("active")[0].value  + '&timezone=' + new Date().getTimezoneOffset();
         var request = new XMLHttpRequest();
         request.open('GET', 'https://se.ifmo.ru/~s311724/lab1/script.php'+'?'+data,true);
@@ -93,32 +83,9 @@ $('.form').on('submit',function (event){
                 alert(`Ошибка ${request.status}: ${request.statusText}`);
             } else {
                 console.log(request.responseText);
-                let result = JSON.parse(request.responseText) ;
-                /*
-                for(let i in result.response){
-                    if (result.response[i].validate){
-                        row = '<tr>';
-                        row += '<td>' + result.response[i].xval + '</td>';
-                        row += '<td>' + result.response[i].yval + '</td>';
-                        row += '<td>' + result.response[i].rval + '</td>';
-                        row += '<td>' + result.response[i].checkarea + '</td>';
-                        row += '<td colspan="2">' + result.response[i].curtime + '</td>';
-                        row += '<td colspan="2">' + result.response[i].exectime + '</td>';
-                        $('.table-result').append(row);
-                    }
-                }
-                 */
+                let result = request.responseText ;
+                document.querySelector(".table-result").innerHTML=result;
 
-                if (result.validate) {
-                    row = '<tr>';
-                    row += '<td>' + result.xval + '</td>';
-                    row += '<td>' + result.yval + '</td>';
-                    row += '<td>' + result.rval + '</td>';
-                    row += '<td>' + result.checkarea + '</td>';
-                    row += '<td colspan="2">' + result.curtime + '</td>';
-                    row += '<td colspan="2">' + result.exectime + '</td>';
-                    $('.table-result').append(row);
-                }
             }
         }
         $('.form')[0].reset();
