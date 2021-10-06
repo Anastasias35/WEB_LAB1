@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if(!isset($_SESSION['data'])){
@@ -67,8 +66,3 @@ if (isset($_GET['Coordinates_X'])){
         </tr>
     <?php } ?>
 </table>
-
-
-
-
-

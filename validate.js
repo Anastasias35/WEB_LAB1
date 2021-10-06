@@ -56,7 +56,8 @@ function begin(){
         } else {
             console.log(request.responseText);
             let result = request.responseText;
-            document.querySelector(".table-result").innerHTML=result;
+            //    document.querySelector(".table-result").innerHTML=result;
+            $(".table-result tr:first").after(data);
         }
     };
 }
